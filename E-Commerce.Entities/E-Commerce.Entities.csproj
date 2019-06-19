@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>E_Commerce.Entities</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Concrete\" />
+  </ItemGroup>
+
+</Project>
