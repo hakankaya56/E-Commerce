@@ -1,11 +1,12 @@
 # E-Commerce
 This is demo application
 
-we will use this technologies
+used technologies
 
-.Net Core,
-Web Api,
+Asp.Net Core 2.2,
+Asp.Net Web Api Core,
 Angular,
-EntityFramework,
-Dependecy Injection ,
-Code First
+EntityFramework Core(Code First),
+Dependency Injection,
+MSSQL
+
