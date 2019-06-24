@@ -5,4 +5,13 @@
     <RootNamespace>E_Commerce.Business</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-Commerce.DataAccess\E-Commerce.DataAccess.csproj" />
+    <ProjectReference Include="..\E-Commerce.Entities\E-Commerce.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
