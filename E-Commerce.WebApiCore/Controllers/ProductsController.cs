@@ -25,15 +25,25 @@ namespace E_Commerce.WebApiCore.Controllers
         public ActionResult Products(int categoryId)
         {
             var products = _productService.ProductList(categoryId);
+            
             return Ok(products);
         }
 
         [HttpGet]
-        [Route("Categories")]
+        [Route("detail")]
+        public ActionResult ProductDetail(int productId)
+        {
+            var productDetail = _productService.GetById(productId);
+            return Ok(productDetail);
+        }
+
+        [HttpGet]
+        [Route("categories")]
         public ActionResult Categories()
         {
             var categories = _categoryService.CategoryList();
             return Ok(categories);
         }
+
     }
 }

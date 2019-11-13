@@ -7,8 +7,8 @@ namespace E_Commerce.Entities.Concrete
 {
     public class Category:IEntity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
 
     }
 }
