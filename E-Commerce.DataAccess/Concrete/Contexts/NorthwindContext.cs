@@ -10,7 +10,7 @@ namespace E_Commerce.DataAccess.Concrete.Contexts
       {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-FB1GOR8;Database=Northwind;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=ServerName;Database=DatabaseName;Trusted_Connection=True;");
         }
 
         //public NorthwindContext(DbContextOptions<NorthwindContext> options) : base(options) { }
