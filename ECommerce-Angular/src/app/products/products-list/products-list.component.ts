@@ -3,11 +3,13 @@ import { ProductService } from '../service/product.service';
 import { Product } from '../model/product';
 import { Category } from '../model/category';
 
+
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.css']
 })
+
 export class ProductsListComponent implements OnInit {
   products: Product[];
   categories: Category[];
@@ -18,9 +20,7 @@ export class ProductsListComponent implements OnInit {
        this.products = data;
     });
 
-    this.productService.getCategoryList().subscribe(data => {
-       this.categories = data;
-    });
+  
   }
 
 }

@@ -10,15 +10,23 @@ import { Category } from '../model/category';
   providedIn: 'root'
 })
 export class ProductService {
- url = environment.baseUrl;
-constructor(private httpClient: HttpClient) { }
+  url = environment.baseUrl;
+  constructor(private httpClient: HttpClient) { }
 
 
-getProductList(): Observable<Product[]> {
-  return this.httpClient.get<Product[]>(this.url + 'Products');
-}
+  getProductList(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.url + 'Products');
+  }
 
-getCategoryList(): Observable<Category[]> {
-   return this.httpClient.get<Category[]>(this.url + 'Products/Categories');
-}
+
+
+  // tslint:disable-next-line: variable-name
+  getByCategory(id: number): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.url + 'Products?=' + id);
+
+  }
+
+  getById(productId: number): Observable<Product> {
+    return this.httpClient.get<Product>(this.url + 'Products/detail?=' + productId);
+  }
 }

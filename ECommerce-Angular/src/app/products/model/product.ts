@@ -1,9 +1,12 @@
+import { Category } from './category';
+
 export class Product {
 
-    productId: number;
+    productID: number;
     productName: string;
-    categoryId: number;
+    categoryID: number;
     quantityPerUnit: number;
     unitPrice: number;
     unitsInStock: number;
+    categories: Category;
 }
