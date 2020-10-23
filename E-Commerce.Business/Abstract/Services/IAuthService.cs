@@ -6,11 +6,11 @@ using E_Commerce.Entities.Concrete;
 
 namespace E_Commerce.Business.Abstract.Services
 {
-     public interface IAuthService
-     {
-         Task<ApplicationUser> Register(ApplicationUser user, string password);
-         List<ApplicationUser> UsersList();
-         Task<bool> UserExists(string userName);
-         Task<bool> EmailExist(string email);
-     }
+    public interface IAuthService
+    {
+        Task<User> Register(User user, string password);
+        Task<User> Login(string username, string password);
+        List<User> UsersList();
+        Task<bool> UserExists(string userName);
+    }
 }

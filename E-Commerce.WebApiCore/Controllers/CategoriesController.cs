@@ -20,7 +20,6 @@ namespace E_Commerce.WebApiCore.Controllers
         }
 
         [HttpGet]
-        [Route("GetCategoryList")]
         public ActionResult GetCategorList()
         {
             var categories = _categoryService.CategoryList();

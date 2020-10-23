@@ -12,6 +12,8 @@ import { ProductsListComponent } from './products/products-list/products-list.co
 import { LoginComponent } from './login/login/login.component';
 import { RegisterComponent } from './register/register/register.component';
 import { RouterModule } from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { appRoutes } from './routes';
 
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
@@ -23,6 +25,8 @@ import { ShoppingCartComponent } from './shopping/components/shopping-cart/shopp
 import { CheckOutComponent } from './shopping/components/check-out/check-out.component';
 import { OrderSuccessComponent } from './shopping/components/order-success/order-success.component';
 import { MyOrdersComponent } from './shopping/components/my-orders/my-orders.component';
+import { ProductFilterComponent } from './shopping/components/products/product-filter/product-filter.component';
+import { ProductCartComponent } from './shopping/components/products/product-cart/product-cart.component';
 
 @NgModule({
    declarations: [
@@ -39,7 +43,9 @@ import { MyOrdersComponent } from './shopping/components/my-orders/my-orders.com
       ShoppingCartComponent,
       CheckOutComponent,
       OrderSuccessComponent,
-      MyOrdersComponent
+      MyOrdersComponent,
+      ProductFilterComponent,
+      ProductCartComponent
    ],
    imports: [
       BrowserModule,
@@ -48,6 +54,9 @@ import { MyOrdersComponent } from './shopping/components/my-orders/my-orders.com
       NgbModule,
       MatInputModule,
       BrowserAnimationsModule,
+      FormsModule,
+      ReactiveFormsModule,
+      Ng2SearchPipeModule,
       RouterModule.forRoot(appRoutes)
    ],
    providers: [],

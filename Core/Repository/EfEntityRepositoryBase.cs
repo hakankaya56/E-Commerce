@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -57,6 +58,42 @@ namespace Core.Repository
                 var deletedEntity = context.Entry(entity);
                 deletedEntity.State = EntityState.Deleted;
                 context.SaveChanges();
+            }
+        }
+
+        public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter = null)
+        {
+            using (var context = new TContext())
+            {
+
+                return filter == null
+                    ? await context.Set<TEntity>().ToListAsync()
+                    : await context.Set<TEntity>().Where(filter).ToListAsync();
+            }
+        }
+
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            using (var context = new TContext())
+            {
+                return await context.Set<TEntity>().SingleOrDefaultAsync(filter);
+            }
+        }
+        public async Task<TEntity> AddAsync(TEntity entity)
+        {
+            using (var context = new TContext())
+            {
+                await context.AddAsync(entity);
+                await context.SaveChangesAsync();
+                return entity;
+            }
+        }
+
+        public async Task<bool> GetCheckAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            using (var context = new TContext())
+            {
+                return await context.Set<TEntity>().AnyAsync(filter);
             }
         }
     }

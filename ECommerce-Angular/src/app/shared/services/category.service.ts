@@ -13,6 +13,6 @@ export class CategoryService {
 
 
   getCategoryList(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(this.baseUrl + 'GetCategoryList');
+    return this.httpClient.get<Category[]>(this.baseUrl);
   }
 }

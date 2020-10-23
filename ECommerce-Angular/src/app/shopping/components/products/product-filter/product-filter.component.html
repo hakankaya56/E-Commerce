@@ -1,0 +1,14 @@
+<input class="form-control" [(ngModel)]="searchText" placeholder="Search">
+
+<div class="sticky-top">
+<ul class="list-group" style="color: white; background-color: white;">
+  <li class="list-group-item">
+     <a class="list-group-item list-group-item-action" routerLink="/" [class.active]="!category">
+      All Categories
+    </a>
+  </li>
+   <li *ngFor="let c of categories  | filter:searchText"  class="list-group-item">
+     <a  routerLink="/" [queryParams]="{category: c.categoryID}" class="list-group-item list-group-item-action" [class.active]="category === c.categoryName">{{c.categoryName}}</a>  
+   </li>
+ </ul>
+</div>

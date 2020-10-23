@@ -15,14 +15,14 @@ export class ProductService {
 
 
   getProductList(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.url + 'Products');
+    return this.httpClient.get<Product[]>(this.url + 'Products/ProductList');
   }
 
 
 
   // tslint:disable-next-line: variable-name
   getByCategory(id: number): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.url + 'Products?=' + id);
+    return this.httpClient.get<Product[]>(this.url + 'Products/GetByCategory?=' + id);
 
   }
 

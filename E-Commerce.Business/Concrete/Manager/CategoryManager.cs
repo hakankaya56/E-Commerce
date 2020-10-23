@@ -4,6 +4,7 @@ using System.Text;
 using E_Commerce.Business.Abstract.Services;
 using E_Commerce.DataAccess.Abstract;
 using E_Commerce.Entities.ComplexType;
+using E_Commerce.Entities.Concrete;
 
 namespace E_Commerce.Business.Concrete.Manager
 {
@@ -16,9 +17,9 @@ namespace E_Commerce.Business.Concrete.Manager
             _categoryDal = categoryDal;
         }
 
-        public List<CategoryProducts> CategoryList()
+        public List<Category> CategoryList()
         {
-            return _categoryDal.GetCategoryList();
+            return _categoryDal.GetList();
         }
     }
 }
